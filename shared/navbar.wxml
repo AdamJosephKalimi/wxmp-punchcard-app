@@ -4,10 +4,10 @@
       <image src="../../assets/scanner-icon.svg" bindtap='scan_qr'/>
     </view>
     <view class="navbar-icon">    
-      <image src="../../assets/wallet-icon.svg" />
+      <image src="../../assets/wallet-icon.svg" bindtap='goWallet'/>
     </view>
     <view class="navbar-icon">    
-      <image src="../../assets/list-icon.svg" />
+      <image src="../../assets/list-icon.svg" bindtap='goList'/>
     </view>
   </view>
 </template>

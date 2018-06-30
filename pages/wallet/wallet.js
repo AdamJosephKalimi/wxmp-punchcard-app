@@ -33,6 +33,19 @@ Page({
     })
   },
 
+  //* Navabar Function*//
+
+  goWallet: function (e) {
+    wx.reLaunch({
+      url: '/pages/wallet/wallet'
+    })
+  },
+  goList: function (e) {
+    wx.reLaunch({
+      url: '/pages/card-list/card-list'
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

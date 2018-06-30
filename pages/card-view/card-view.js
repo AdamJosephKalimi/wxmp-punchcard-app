@@ -42,6 +42,9 @@ Page({
    */
   onLoad: function (options) {
     var merchant = options.id;
+    var user = app.globalData.appUser.id
+    console.log(TinyDB.getPunchCardsForUserAndMerchant(user, merchant))
+    
   },
 
   /**

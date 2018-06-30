@@ -1,0 +1,5 @@
+<template name="navbar">
+  <view class="navbar-container">
+    
+  </view>
+</template>

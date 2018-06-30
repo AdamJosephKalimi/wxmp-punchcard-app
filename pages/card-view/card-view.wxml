@@ -1,2 +1,10 @@
 <!--pages/card-view/card-view.wxml-->
-<text>pages/card-view/card-view.wxml</text>
+<import src="/shared/navbar.wxml" />
+
+<view class="container">
+
+  <text>pages/card-view/card-view.wxml</text>
+
+  <template is="navbar" />
+  <view class="cardview-active"></view>
+</view>

@@ -1,3 +1,6 @@
+const TinyDB = require('../../lib/tinyDB.js');
+const pageData = TinyDB.getPunchcardByID(4);
+
 // pages/card-view/card-view.js
 Page({
 
@@ -5,19 +8,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fakeData: {
-      "id": 3,
-      "merchant": 1,
-      "user": 1,
-      "logo": "https://timgsa.baidu.com/timg?image&quality=80&size=b10000_10000&sec=1530352443&di=7467f86f3c4bb968556783fe622256dd&src=http://img.sj33.cn/uploads/allimg/201401/7-1401231U30J57.jpg",
-      "name": "Statbucks",
-      "expirationDate": "2018-06-12",
-      "reward": "one free coffee",
-      "maxPunches": 8,
-      "currentPunches": 4,
-      "location": "naked hub, Shanghai",
-      "finePrint": "only valid if you know the password"
-    }
+    fakeData: pageData
   },
 
   /**

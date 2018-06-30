@@ -1,4 +1,4 @@
-const TinyDB = require('../../lib/tinyDB.js')
+const TinyDB = require('../../lib/tinyDB.js');
 
 const log = console.log
 

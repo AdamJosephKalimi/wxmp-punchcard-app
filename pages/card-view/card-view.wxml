@@ -19,7 +19,7 @@
 </view>
 
 <view class="rewardButton" wx:if="{{isComplete === true}}">
-  <text bindtap='view_reward'>REDEEM</text>
+  <text   >REDEEM</text>
 </view>
 <view>
   <text>Address:{{fakeData.location}}</text>

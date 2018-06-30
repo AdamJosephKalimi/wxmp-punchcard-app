@@ -19,7 +19,7 @@ Page({
     wx.scanCode({
       success: (res) => {
         console.log(res)
-        this.merchant_id = res.result;
+        this.merchant_id = res.result.split("=")[1];
         that.setData({
           merchant_id: this.merchant_id
         })
@@ -30,7 +30,7 @@ Page({
           duration: 2000
         })
         wx.navigateTo({
-          url: `/pages/card-view/card-view?id=${merchant_id}`,
+          url: `/pages/card-view/card-view?id=${that.data.merchant_id}`,
         })
       },
       complete: (res) => {
@@ -42,6 +42,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log("card-view-onload", options)
     
   },
 

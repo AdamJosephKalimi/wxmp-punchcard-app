@@ -1,4 +1,6 @@
 <!--pages/card-list/card-list.wxml-->
+<import src="/shared/navbar.wxml" />
+
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
@@ -10,5 +12,8 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}} Test</text>
   </view>
+
+  <!--shared/navbar.wxml-->
+  <template is="navbar" />
 </view>
 

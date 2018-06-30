@@ -1,7 +1,6 @@
 const TinyDB = require('../../lib/tinyDB.js');
+debugger
 const pageData = TinyDB.getPunchcardByID(4);
-
-let log = console.log
 
 // pages/card-view/card-view.js
 var app = getApp(); 
@@ -65,7 +64,9 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (options) {    
+    const pageData = TinyDB.getPunchcardByID(4);
+    this.setData({ fakeData: pageData})
     if(options.id) { // QR code scanned
       var scannedMerchantID = options.id;
       var userID = app.globalData.appUser.id

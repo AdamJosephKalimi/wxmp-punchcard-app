@@ -67,7 +67,6 @@
 
   </scroll-view>
 
-
   <template is="navbar" />
   <view class="cardview-active"></view>
 </view>

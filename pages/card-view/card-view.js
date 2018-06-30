@@ -2,7 +2,7 @@
 const TinyDB = require('../../lib/tinyDB.js');
 const app = getApp(); 
 const user = app.globalData.appUser;
-const pageData = TinyDB.getPunchcardByID(0);
+const loadPunchCardData = TinyDB.getPunchcardByID(0);
 
 Page({
 
@@ -10,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fakeData: pageData,
+    punchCardData: loadPunchCardData,
     isComplete: false
   },
 
@@ -67,11 +67,15 @@ Page({
 
 
   onLoad: function (options) {  
-     // if a clickthrough from another page, load that id
-    const pageData = TinyDB.getPunchcardByID(4);
-    this.setData({ fakeData: pageData})
+    // If clickthrough from another page, load that id
+    if (options.punchCardID){
+      let pcId = options.punchCardID;
+      var reloadPunchCard = TinyDB.getPunchcardByID(parseInt(options.punchCardID));
+      this.setData({ punchCardData: reloadPunchCard })  
+     }
 
-    if(options.id) { // QR code scanned
+    // If QR code scanned, logic
+    if(options.id) { 
       var scannedMerchantID = options.id;
       var userID = app.globalData.appUser.id
       var results = TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID)
@@ -90,10 +94,10 @@ Page({
             "finePrint": "only valid if you know the password"
           }          
         )
-        this.setData({fakeData: newPunchCard})
+        this.setData({punchCardData: newPunchCard})
       } else { // if has punchard, increment
         TinyDB.incrementPunchCard(results.id); 
-        this.setData({ fakeData: TinyDB.getPunchcardByID(results.id) })
+        this.setData({ punchCardData: TinyDB.getPunchcardByID(results.id) })
         if (TinyDB.getPunchcardByID(results.id).currentPunches ===
           TinyDB.getPunchcardByID(results.id).maxPunches) {
             this.setData({isComplete: true});

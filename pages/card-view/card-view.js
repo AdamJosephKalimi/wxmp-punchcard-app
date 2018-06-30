@@ -11,7 +11,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fakeData: pageData
+    fakeData: pageData,
+    erroMessage: "you dont have this coupon"
   },
 
   scan_qr: function () {
@@ -46,10 +47,25 @@ Page({
 
     if(options.id) { // QR code scanned
       var scannedMerchantID = options.id;
-      log(scannedMerchantID)
       var userID = app.globalData.appUser.id
-      log(userID)
-      console.log(TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID))
+      var results = TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID)
+      if(results == undefined) {
+        var newPunchCard = TinyDB.makeNewPunchCard(
+          {
+            "id": 6,
+            "merchant": 1,
+            "user": 1,
+            "logo": "http://www.farmhousejuice.cn/wp-content/uploads/2015/10/pumpkin-corner-314x600.jpg",
+            "name": "buyonegetonefree",
+            "expirationDate": "2018-06-12",
+            "reward": "one free coffee",
+            "maxPunches": 8,
+            "currentPunches": 4,
+            "finePrint": "only valid if you know the password"
+          }          
+        )
+        this.setData({fakeData: newPunchCard})
+      }
     }
 
   },

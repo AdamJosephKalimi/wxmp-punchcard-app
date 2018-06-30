@@ -3,33 +3,33 @@
 
 <view class="container">
 <view>
-  <text>{{fakeData.name}}</text>
+  <text>{{punchCardData.name}}</text>
 </view>
 
 <view>
-  <image src='{{fakeData.logo}}'/>
+  <image src='{{punchCardData.logo}}'/>
 </view>
 
 <view>
-  <text>{{fakeData.currentPunches}}/{{fakeData.maxPunches}}</text>
+  <text>{{punchCardData.currentPunches}}/{{punchCardData.maxPunches}}</text>
 </view>
 
 <view>
-  <text>Reward:{{fakeData.reward}}</text>
+  <text>Reward:{{punchCardData.reward}}</text>
 </view>
 
 <view class="rewardButton" wx:if="{{isComplete === true}}">
-  <text   >REDEEM</text>
+  <text>REDEEM</text>
 </view>
 <view>
-  <text>Address:{{fakeData.location}}</text>
+  <text>Address:{{punchCardData.location}}</text>
 </view>
 <view>
-  <text>Expiration Date:{{fakeData.expirationDate}}</text>
+  <text>Expiration Date:{{punchCardData.expirationDate}}</text>
 </view>
 
 <view>
-  <text>{{fakeData.finePrint}}</text>
+  <text>{{punchCardData.finePrint}}</text>
 </view>
 
   <template is="navbar" />

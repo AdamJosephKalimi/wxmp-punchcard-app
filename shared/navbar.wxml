@@ -1,5 +1,7 @@
 <template name="navbar">
   <view class="navbar-container">
-    
+    <view class="navbar-scan-btn">
+      
+    </view>
   </view>
 </template>

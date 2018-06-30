@@ -22,3 +22,14 @@
   bottom: 0;
   box-shadow: 0 2px 5px 0 #929292;
 }
+
+.navbar-scan-btn {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  top: -40rpx;
+  background-color: #FFF600;
+  transform: translate(-50%,0);
+}

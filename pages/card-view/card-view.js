@@ -1,6 +1,8 @@
 const TinyDB = require('../../lib/tinyDB.js');
 const pageData = TinyDB.getPunchcardByID(4);
 
+let log = console.log
+
 // pages/card-view/card-view.js
 var app = getApp(); 
 Page({
@@ -9,9 +11,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    fakeData: pageData
+    fakeData: pageData,
+    erroMessage: "you dont have this coupon"
   },
-
 
   scan_qr: function () {
     var that = this;
@@ -58,8 +60,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("card-view-onload", options)
-    
+
+    if(options.id) { // QR code scanned
+      var scannedMerchantID = options.id;
+      var userID = app.globalData.appUser.id
+      var results = TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID)
+      if(results == undefined) {
+        var newPunchCard = TinyDB.makeNewPunchCard(
+          {
+            "id": 6,
+            "merchant": 1,
+            "user": 1,
+            "logo": "http://www.farmhousejuice.cn/wp-content/uploads/2015/10/pumpkin-corner-314x600.jpg",
+            "name": "buyonegetonefree",
+            "expirationDate": "2018-06-12",
+            "reward": "one free coffee",
+            "maxPunches": 8,
+            "currentPunches": 4,
+            "finePrint": "only valid if you know the password"
+          }          
+        )
+        this.setData({fakeData: newPunchCard})
+      }
+    }
+
   },
 
   /**

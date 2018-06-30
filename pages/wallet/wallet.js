@@ -1,11 +1,12 @@
 // pages/wallet/wallet.js
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    
   },
 
   scan_qr: function () {

@@ -1,2 +1,10 @@
 <!--pages/wallet/wallet.wxml-->
-<text>pages/wallet/wallet.wxml</text>
+<import src="/shared/navbar.wxml" />
+
+<view class="container">
+
+  <text>pages/wallet/wallet.wxml</text>
+
+  <template is="navbar" />
+  <view class="wallet-active"></view>
+</view>

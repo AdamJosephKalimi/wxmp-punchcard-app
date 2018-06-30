@@ -7,6 +7,7 @@
   justify-content: space-between;
   padding: 0 10rpx;
   box-sizing: border-box;
+  background-color: #F9F9FF;
 } 
 
 
@@ -15,8 +16,9 @@
 /** navbar **/
 .navbar-container {
   width: 100vw;
-  background-color: aqua;
-  height: 6vh;
+  background-color: #fff;
+  height: 7vh;
   position: relative;
   bottom: 0;
+  box-shadow: 0 2px 5px 0 #929292;
 }

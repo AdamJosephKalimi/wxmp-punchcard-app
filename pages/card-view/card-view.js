@@ -2,6 +2,7 @@ const TinyDB = require('../../lib/tinyDB.js');
 const pageData = TinyDB.getPunchcardByID(4);
 
 // pages/card-view/card-view.js
+var app = getApp(); 
 Page({
 
   /**
@@ -9,6 +10,32 @@ Page({
    */
   data: {
     fakeData: pageData
+  },
+
+
+  scan_qr: function () {
+    var that = this;
+    var merchant_id;
+    wx.scanCode({
+      success: (res) => {
+        console.log(res)
+        this.merchant_id = res.result;
+        that.setData({
+          merchant_id: this.merchant_id
+        })
+        console.log("merchant_id", that.data.merchant_id)
+        wx.showToast({
+          title: 'success',
+          icon: 'success',
+          duration: 2000
+        })
+        wx.navigateTo({
+          url: `/pages/card-view/card-view?id=${merchant_id}`,
+        })
+      },
+      complete: (res) => {
+      }
+    })
   },
 
   /**

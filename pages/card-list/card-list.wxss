@@ -96,6 +96,7 @@
   top: 50%;
   left: 10rpx;
   transform: translate(0,-50%);
+  border-radius: 50%;
 }
 
 .list-title {

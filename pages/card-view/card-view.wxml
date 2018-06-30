@@ -12,6 +12,7 @@
 <text>{{fakeData.currentPunches}}/{{fakeData.maxPunches}}</text>
 </view>
 <view><text>Reward:{{fakeData.reward}}</text></view>
+<view class="rewardButton" wx:if="{{isComplete === true}}"><text bindtap='view_reward'>REDEEM</text></view>
 <view><text>Address:{{fakeData.location}}</text></view>
 <view><text>Expiration Date:{{fakeData.expirationDate}}</text></view>
 <view><text>{{fakeData.finePrint}}</text></view>

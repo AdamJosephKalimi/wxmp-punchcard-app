@@ -12,7 +12,7 @@ Page({
    */
   data: {
     fakeData: pageData,
-    erroMessage: "you dont have this coupon"
+    isComplete: false
   },
 
   scan_qr: function () {
@@ -39,6 +39,12 @@ Page({
       }
     })
   },
+  
+  view_reward: function(e){
+    wx.navigateTo({
+      url: '/pages/reward/reward',
+    })
+  },
 
   //* Navabar Function*//
 
@@ -60,12 +66,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     if(options.id) { // QR code scanned
       var scannedMerchantID = options.id;
       var userID = app.globalData.appUser.id
       var results = TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID)
-      if(results == undefined) {
+      if(results == undefined) { //  if no punchard, creat one
         var newPunchCard = TinyDB.makeNewPunchCard(
           {
             "id": 6,
@@ -81,10 +86,13 @@ Page({
           }          
         )
         this.setData({fakeData: newPunchCard})
-      } else {
-        debugger
-        TinyDB.incrementPunchCard(results.id);
+      } else { // if has punchard, increment
+        TinyDB.incrementPunchCard(results.id); 
         this.setData({ fakeData: TinyDB.getPunchcardByID(results.id) })
+        if (TinyDB.getPunchcardByID(results.id).currentPunches ===
+          TinyDB.getPunchcardByID(results.id).maxPunches) {
+            this.setData({isComplete: true});
+          }
       }
     }
 

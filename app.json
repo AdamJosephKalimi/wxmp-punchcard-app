@@ -6,7 +6,8 @@
     "pages/card-view/card-view",
     "pages/card-list/card-list",
     "pages/testDB/testDB",
-    "pages/scan-test/scan-test"
+    "pages/scan-test/scan-test",
+    "pages/reward/reward"
 
   ],
   "window": {

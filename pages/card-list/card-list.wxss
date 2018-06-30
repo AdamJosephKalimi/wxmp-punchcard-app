@@ -1,4 +1,120 @@
 /* pages/card-list/card-list.wxss */
+.filter-bar {
+  width: 100vw;
+  height: 17vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.search-bar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin: 30rpx;
+}
+
+.map {
+  border: 1px solid #141C3A;
+  padding: 10rpx;
+  border-radius: 6rpx;
+  width: 40rpx;
+  height: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 20rpx;
+}
+
+.map image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.search {
+  width: 50%;
+  height: 40rpx;
+  border-bottom: 1px solid #141C3A;
+  padding: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.search text {
+  font-size: 24rpx;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.filter {
+  min-width: 80rpx;
+  padding: 6rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10rpx;
+}
+
+.filter-active {
+  border-bottom: 1px solid #141C3A;
+}
+
+.filter text {
+  font-size: 24rpx;
+}
+
+.list-cards {
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.list-card {
+  width: 330rpx;
+  height: 220rpx;
+  margin: 12rpx;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  box-shadow: 0px 0 4px 1px #F0F0F7;
+  border-radius: 6rpx;
+}
+
+.list-logo {
+  width: 128rpx;
+  height: 128rpx;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 10rpx;
+  transform: translate(0,-50%);
+}
+
+.list-title {
+  width: 164rpx;
+  text-align: center;
+  font-size: 28rpx;
+  position: absolute;
+  top: 50%;
+  right: 15rpx;
+  transform: translate(0,-50%);
+  font-weight: 600;
+}
+
+.list-x {
+  font-size: 20rpx;
+  bottom: 10rpx;
+  right: 10rpx;
+  position: absolute;
+}
 
 .cardlist-active {
   width:110rpx;

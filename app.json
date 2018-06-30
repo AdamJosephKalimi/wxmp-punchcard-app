@@ -5,7 +5,9 @@
     "pages/wallet/wallet",
     "pages/card-view/card-view",
     "pages/card-list/card-list",
-    "pages/testDB/testDB"
+    "pages/testDB/testDB",
+    "pages/scan-test/scan-test"
+
   ],
   "window": {
     "backgroundTextStyle": "light",

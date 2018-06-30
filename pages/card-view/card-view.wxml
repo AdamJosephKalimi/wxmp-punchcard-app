@@ -1,2 +1,21 @@
 <!--pages/card-view/card-view.wxml-->
-<text>pages/card-view/card-view.wxml</text>
+<import src="/shared/navbar.wxml" />
+
+<view class="container">
+<view>
+<text>{{fakeData.name}}</text>
+</view>
+<view>
+<image src='{{fakeData.logo}}'/>
+</view>
+<view>
+<text>{{fakeData.currentPunches}}/{{fakeData.maxPunches}}</text>
+</view>
+<view><text>Reward:{{fakeData.reward}}</text></view>
+<view><text>Address:{{fakeData.location}}</text></view>
+<view><text>Expiration Date:{{fakeData.expirationDate}}</text></view>
+<view><text>{{fakeData.finePrint}}</text></view>
+  <template is="navbar" />
+  <view class="cardview-active"></view>
+</view>
+

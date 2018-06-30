@@ -81,6 +81,10 @@ Page({
           }          
         )
         this.setData({fakeData: newPunchCard})
+      } else {
+        debugger
+        TinyDB.incrementPunchCard(results.id);
+        this.setData({ fakeData: TinyDB.getPunchcardByID(results.id) })
       }
     }
 

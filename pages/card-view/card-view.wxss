@@ -1,5 +1,16 @@
 /* pages/card-view/card-view.wxss */
 
+.add-btn {
+  position: absolute;
+  top: 2vh;
+  right: 2vh;
+}
+
+.add-btn image {
+  height: 80rpx;
+  width: 80rpx;
+}
+
 .card-title {
   font-size: 40rpx;
   font-weight: 600;

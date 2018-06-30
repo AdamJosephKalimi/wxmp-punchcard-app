@@ -4,26 +4,36 @@
 <view class="container">
   <scroll-view class="scroll-height" scroll-y="true">
 
+    <!--THIS IS THE ADD TO WALLET BUTTON-->
+    <view class="add-btn">
+      <image src="../../assets/add-btn.svg" />
+    </view>
+
+    <!--Punch Card-->
     <view class="card-title navy-font">{{fakeData.name}}</view>
     <view class="card-logo" style="background-image: url('{{fakeData.logo}}')"></view>
 
     <view class="card" style="background-image: url('https://user-images.githubusercontent.com/32171360/42126950-c8b06bba-7cc2-11e8-86da-6156eff56c2b.png')">
       <view class="stamps">
+      <!--
         <image src="../../assets/stamp-icon.svg" />
         <image src="../../assets/stamp-icon.svg" />
         <image src="../../assets/stamp-icon.svg" />
         <image src="../../assets/stamp-icon.svg" />
         <image src="../../assets/stamp-icon.svg" />
         <image src="../../assets/stamp-icon.svg" />
+        -->
       </view>
     </view>
 
+    <!--reward-->
     <view class="reward-text navy-font">Reward</view>
     <view class="reward-icon-container">    
-      <image class="reward-icon" src="../../assets/reward-icon.svg" />
+      <image class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
     </view>
     <view class="redeem navy-font">Tap to redeem</view>
 
+    <!--locations-->
     <view class="locations">
       <view class="location-header navy-font">Locations</view>
       <view class="location">

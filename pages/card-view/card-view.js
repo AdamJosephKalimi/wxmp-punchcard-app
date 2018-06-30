@@ -12,7 +12,6 @@ Page({
     fakeData: pageData
   },
 
-
   scan_qr: function () {
     var that = this;
     var merchant_id;
@@ -42,8 +41,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log("card-view-onload", options)
-    
+
+    var merchant = options.id;
+    console.log ("options: ",options)
   },
 
   /**

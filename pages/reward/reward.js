@@ -1,11 +1,15 @@
 // pages/reward/reward.js
+const TinyDB = require('../../lib/tinyDB.js');
+const pageData = TinyDB.getPunchcardByID(4);
+
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  
+    punchcard: pageData
   },
 
   use_reward: function (e) {
@@ -16,8 +20,8 @@ Page({
       confirmText: "confirm",
       cancelText: "cancle",
       success: function (res) {
-        console.log(res);
-        wx.reLaunch({
+        TinyDB.resetPunchCard(4);
+        wx.navigateTo({
           url: '/pages/card-view/card-view',
         })
       }

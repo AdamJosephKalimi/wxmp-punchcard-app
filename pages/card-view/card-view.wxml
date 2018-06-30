@@ -10,19 +10,12 @@
     </view>
 
     <!--Punch Card-->
-    <view class="card-title navy-font">{{fakeData.name}}</view>
-    <view class="card-logo" style="background-image: url('{{fakeData.logo}}')"></view>
+    <view class="card-title navy-font">{{punchCardData.name}}</view>
+    <view class="card-logo" style="background-image: url('{{punchCardData.logo}}')"></view>
 
     <view class="card" style="background-image: url('https://user-images.githubusercontent.com/32171360/42126950-c8b06bba-7cc2-11e8-86da-6156eff56c2b.png')">
       <view class="stamps">
-      <!--
-        <image src="../../assets/stamp-icon.svg" />
-        <image src="../../assets/stamp-icon.svg" />
-        <image src="../../assets/stamp-icon.svg" />
-        <image src="../../assets/stamp-icon.svg" />
-        <image src="../../assets/stamp-icon.svg" />
-        <image src="../../assets/stamp-icon.svg" />
-        -->
+        <image wx:for="{{punchCardData.currentPunches}}" src="../../assets/stamp-icon.svg" />
       </view>
     </view>
 
@@ -31,7 +24,7 @@
     <view class="reward-icon-container">    
       <image class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
     </view>
-    <view class="redeem navy-font">Tap to redeem</view>
+    <view wx:if="{{isComplete}}" bindtap='view_reward' class="redeem navy-font">Tap to redeem</view>
 
     <!--locations-->
     <view class="locations">
@@ -43,25 +36,25 @@
 
 <!--
     <view>
-      <text>{{fakeData.currentPunches}}/{{fakeData.maxPunches}}</text>
+      <text>{{punchCardData.currentPunches}}/{{punchCardData.maxPunches}}</text>
     </view>
 
     <view>
-      <text>Reward:{{fakeData.reward}}</text>
+      <text>Reward:{{punchCardData.reward}}</text>
     </view>
 
     <view class="rewardButton" wx:if="{{isComplete === true}}">
       <text   >REDEEM</text>
     </view>
     <view>
-      <text>Address:{{fakeData.location}}</text>
+      <text>Address:{{punchCardData.location}}</text>
     </view>
     <view>
-      <text>Expiration Date:{{fakeData.expirationDate}}</text>
+      <text>Expiration Date:{{punchCardData.expirationDate}}</text>
     </view>
 
     <view>
-      <text>{{fakeData.finePrint}}</text>
+      <text>{{punchCardData.finePrint}}</text>
     </view>
 -->
 

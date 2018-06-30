@@ -3,7 +3,7 @@ const TinyDB = require('../../lib/tinyDB.js');
 const SQR = require('../../lib/scanQR.js');
 const app = getApp(); 
 const user = app.globalData.appUser;
-const loadPunchCardData = TinyDB.getPunchcardByID(0);
+const loadPunchCardData = TinyDB.getPunchcardByID(4);
 
 Page({
 
@@ -46,19 +46,22 @@ Page({
 
 
   onLoad: function (options) {  
+    debugger
     // If clickthrough from another page, load that id
     if (options.punchCardID){
       let pcId = options.punchCardID;
-      var reloadPunchCard = TinyDB.getPunchcardByID(parseInt(options.punchCardID));
-      this.setData({ punchCardData: reloadPunchCard })  
+      var reloadPunchCard = TinyDB.getPunchcardByID(parseInt(pcId));
+      this.setData({ punchCardData: reloadPunchCard }) 
      }
+
 
     // If QR code scanned, logic
     if(options.id) { 
+      debugger
       var scannedMerchantID = options.id;
       var userID = app.globalData.appUser.id
       var results = TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID)
-      if(results == undefined) { //  if no punchard, creat one
+      if(results == undefined) { //  if no punchcard, create one
         var newPunchCard = TinyDB.makeNewPunchCard(
           {
             "id": 6,
@@ -73,12 +76,14 @@ Page({
             "finePrint": "only valid if you know the password"
           }          
         )
-        this.setData({punchCardData: newPunchCard})
-      } else { // if has punchard, increment
+        this.setData({punchCardData: newPunchCard});
+      } 
+      else { // if has punchcard, increment
         TinyDB.incrementPunchCard(results.id); 
-        this.setData({ punchCardData: TinyDB.getPunchcardByID(results.id) })
+
         if (TinyDB.getPunchcardByID(results.id).currentPunches ===
           TinyDB.getPunchcardByID(results.id).maxPunches) {
+            this.setData({ punchCardData: TinyDB.getPunchcardByID(results.id) })
             this.setData({isComplete: true});
           }
       }

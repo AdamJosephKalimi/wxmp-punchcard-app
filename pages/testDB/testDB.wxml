@@ -1,0 +1,8 @@
+<!--pages/testDB/testDB.wxml-->
+<text>pages/testDB/testDB.wxml</text>
+
+<button bindtap='testRead'>testRead</button>
+
+<button bindtap='testIncrement'>testIncrement</button>
+
+{{data.length}}

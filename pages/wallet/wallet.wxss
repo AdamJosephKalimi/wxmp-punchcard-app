@@ -29,6 +29,7 @@
   top: 50%;
   left: 60rpx;
   transform: translate(0,-50%);
+  border-radius: 50%;
 }
 
 .wallet-title {

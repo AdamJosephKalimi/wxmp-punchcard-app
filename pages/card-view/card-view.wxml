@@ -2,35 +2,61 @@
 <import src="/shared/navbar.wxml" />
 
 <view class="container">
-<view>
-  <text>{{fakeData.name}}</text>
-</view>
+  <scroll-view class="scroll-height" scroll-y="true">
 
-<view>
-  <image src='{{fakeData.logo}}'/>
-</view>
+    <view class="card-title navy-font">{{fakeData.name}}</view>
+    <view class="card-logo" style="background-image: url('{{fakeData.logo}}')"></view>
 
-<view>
-  <text>{{fakeData.currentPunches}}/{{fakeData.maxPunches}}</text>
-</view>
+    <view class="card" style="background-image: url('https://user-images.githubusercontent.com/32171360/42126950-c8b06bba-7cc2-11e8-86da-6156eff56c2b.png')">
+      <view class="stamps">
+        <image src="../../assets/stamp-icon.svg" />
+        <image src="../../assets/stamp-icon.svg" />
+        <image src="../../assets/stamp-icon.svg" />
+        <image src="../../assets/stamp-icon.svg" />
+        <image src="../../assets/stamp-icon.svg" />
+        <image src="../../assets/stamp-icon.svg" />
+      </view>
+    </view>
 
-<view>
-  <text>Reward:{{fakeData.reward}}</text>
-</view>
+    <view class="reward-text navy-font">Reward</view>
+    <view class="reward-icon-container">    
+      <image class="reward-icon" src="../../assets/reward-icon.svg" />
+    </view>
+    <view class="redeem navy-font">Tap to redeem</view>
 
-<view class="rewardButton" wx:if="{{isComplete === true}}">
-  <text   >REDEEM</text>
-</view>
-<view>
-  <text>Address:{{fakeData.location}}</text>
-</view>
-<view>
-  <text>Expiration Date:{{fakeData.expirationDate}}</text>
-</view>
+    <view class="locations">
+      <view class="location-header navy-font">Locations</view>
+      <view class="location">
+        <view class="location-address navy-font">303 Nanjing Rd, Jing An, Shanghai</view>
+      </view>  
+    </view>
 
-<view>
-  <text>{{fakeData.finePrint}}</text>
-</view>
+<!--
+    <view>
+      <text>{{fakeData.currentPunches}}/{{fakeData.maxPunches}}</text>
+    </view>
+
+    <view>
+      <text>Reward:{{fakeData.reward}}</text>
+    </view>
+
+    <view class="rewardButton" wx:if="{{isComplete === true}}">
+      <text   >REDEEM</text>
+    </view>
+    <view>
+      <text>Address:{{fakeData.location}}</text>
+    </view>
+    <view>
+      <text>Expiration Date:{{fakeData.expirationDate}}</text>
+    </view>
+
+    <view>
+      <text>{{fakeData.finePrint}}</text>
+    </view>
+-->
+
+  </scroll-view>
+
 
   <template is="navbar" />
   <view class="cardview-active"></view>

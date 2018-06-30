@@ -75,4 +75,18 @@ Page({
       }
     })
   },
+  //* Navabar Function*//
+
+  goWallet: function (e) {
+    wx.reLaunch({
+      url: '/pages/wallet/wallet'
+    })
+  },
+  goList: function (e) {
+    wx.reLaunch({
+      url: '/pages/card-list/card-list'
+    })
+  }
+  //* Navabar Function*//
+
 })

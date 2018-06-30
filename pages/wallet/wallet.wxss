@@ -1,4 +1,57 @@
 /* pages/wallet/wallet.wxss */
+.card-counter {
+  text-align: center;
+  margin: 30rpx;
+  font-size: 24rpx;
+  color: #888888;
+}
+
+.wallet-cards {
+  padding: 0 20rpx;
+  display: flex;
+  justify-content: left;
+  align-items: flex-start;
+  flex-wrap: wrap;
+
+}
+
+.wallet-card {
+  width: 330rpx;
+  height: 220rpx;
+  margin: 12rpx;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.wallet-logo {
+  width: 128rpx;
+  height: 128rpx;
+  background-size: cover;
+  position: absolute;
+  top: 50%;
+  left: 10rpx;
+  transform: translate(0,-50%);
+}
+
+.wallet-title {
+  width: 164rpx;
+  text-align: center;
+  font-size: 28rpx;
+  position: absolute;
+  top: 50%;
+  right: 15rpx;
+  transform: translate(0,-50%);
+  font-weight: 600;
+}
+
+.wallet-x {
+  font-size: 20rpx;
+  bottom: 10rpx;
+  right: 10rpx;
+  position: absolute;
+}
+
 .wallet-active {
   width:110rpx;
   position:absolute;

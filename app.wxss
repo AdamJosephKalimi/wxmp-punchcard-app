@@ -5,11 +5,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 0 10rpx;
+  /* padding: 0 10rpx; */
   box-sizing: border-box;
   background-color: #F9F9FF;
   position: relative;
 } 
+
+.scroll-height {
+  height: 93vh;
+}
+
+.navy-font {
+  color: #141C3A;
+}
 
 /** SHARED COMPONENTS **/
 

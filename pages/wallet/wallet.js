@@ -1,4 +1,7 @@
 // pages/wallet/wallet.js
+const TinyDB = require('../../lib/tinyDB.js');
+// pageData = TinyDB.getPunchcardsForUser(2)
+
 
 Page({
 

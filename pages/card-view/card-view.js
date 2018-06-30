@@ -1,10 +1,9 @@
 const TinyDB = require('../../lib/tinyDB.js');
 const pageData = TinyDB.getPunchcardByID(4);
-
-let log = console.log
+var app = getApp(); 
 
 // pages/card-view/card-view.js
-var app = getApp(); 
+
 Page({
 
   /**

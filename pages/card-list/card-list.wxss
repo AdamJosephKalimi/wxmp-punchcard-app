@@ -1,22 +1,11 @@
 /* pages/card-list/card-list.wxss */
 
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.cardlist-active {
+  width:110rpx;
+  position:absolute;
+  bottom:0;
+  height:18rpx;
+  background-color:#FFF600;
+  left:67.5%;
+  z-index:0;
 }

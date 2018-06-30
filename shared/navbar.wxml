@@ -1,7 +1,13 @@
 <template name="navbar">
   <view class="navbar-container">
     <view class="navbar-scan-btn">
-      
+      <image src="../../assets/scanner-icon.svg" />
+    </view>
+    <view class="navbar-icon">    
+      <image src="../../assets/wallet-icon.svg" />
+    </view>
+    <view class="navbar-icon">    
+      <image src="../../assets/list-icon.svg" />
     </view>
   </view>
 </template>

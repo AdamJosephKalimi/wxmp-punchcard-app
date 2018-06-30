@@ -8,8 +8,8 @@
   padding: 0 10rpx;
   box-sizing: border-box;
   background-color: #F9F9FF;
+  position: relative;
 } 
-
 
 /** SHARED COMPONENTS **/
 
@@ -21,6 +21,27 @@
   position: relative;
   bottom: 0;
   box-shadow: 0 2px 5px 0 #929292;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.navbar-container image {
+  width: 4vh;
+  height: 4vh;
+  padding: 10rpx;
+}
+
+.navbar-icon {
+  width: 6vh;
+  display: flex;
+  justify-content: center;
+}
+
+.navbar-active {
+  border-bottom: solid 3px #FFF600;
+  position: relative;
+  bottom: 6rpx;
 }
 
 .navbar-scan-btn {
@@ -32,4 +53,12 @@
   top: -40rpx;
   background-color: #FFF600;
   transform: translate(-50%,0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-scan-btn image {
+  height: 50rpx;
+  width: 50rpx;
 }

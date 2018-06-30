@@ -7,13 +7,12 @@
     <view class="card-counter">x cards</view>
 
     <view class="wallet-cards">
-      <view class="wallet-card" style="background-image: url('https://user-images.githubusercontent.com/32171360/42127006-e5762c5c-7cc3-11e8-89bc-5c6d31802df4.png')">
+      <view class="wallet-card" style="background-image: url('https://user-images.githubusercontent.com/32171360/42126998-dc329c20-7cc3-11e8-9c46-04fd0962f665.png')">
         <view class="wallet-logo" style="background-image: url('https://v2assets.zopim.io/4YYfzh6b7WjTBg4UkHc8J7XKmos7gNV8-banner?1486175605983')"></view>
         <view class="wallet-title navy-font">Farmhouse Juice</view>
         <view class="wallet-x navy-font">x/8</view>
       </view>
-    </view>
-
+    </view>    
   
   </scroll-view>
 

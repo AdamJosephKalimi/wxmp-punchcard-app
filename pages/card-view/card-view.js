@@ -64,9 +64,12 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
 
-    // if a clickthrough from another page, load that id 
+
+  onLoad: function (options) {  
+     // if a clickthrough from another page, load that id
+    const pageData = TinyDB.getPunchcardByID(4);
+    this.setData({ fakeData: pageData})
 
     if(options.id) { // QR code scanned
       var scannedMerchantID = options.id;

@@ -20,7 +20,7 @@ Page({
   },
 
   testRead() {
-    let data = TinyDB.getUserByID(2)
+    let data = TinyDB.resetPunchCard(4)
     console.log(data)
 
   },

@@ -8,7 +8,7 @@
 
 
     <view wx:for="{{punchCards}}" class="wallet-cards" bindtap="onClickCard">
-      <view class="wallet-card" data-prop="{{item.id}}" style="background-image: url('https://user-images.githubusercontent.com/32171360/42126998-dc329c20-7cc3-11e8-9c46-04fd0962f665.png')">
+      <view class="wallet-card" data-prop="{{item.id}}" style="background-image: url('{{item.walletViewCard}}')">
         <view class="wallet-logo" style="background-image: url('{{item.logo}}')" data-prop="{{item.id}}"></view>
         <view class="wallet-title navy-font" data-prop="{{item.id}}">{{item.name}}</view>
         <view class="wallet-x navy-font" data-prop="{{item.id}}">{{item.currentPunches}}/{{item.maxPunches}}</view>

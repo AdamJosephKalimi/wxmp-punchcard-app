@@ -36,7 +36,7 @@
         </view>
         <view data-prop="{{item.id}}" class="list-title navy-font">{{item.name}}</view>
         
-        <view data-prop="{item.currentPunches}" class="list-x navy-font">{{item.currentPunches}}/8</view>
+        <view data-prop="{item.currentPunches}" class="list-x navy-font">0/8</view>
       </view>
     </view>
 

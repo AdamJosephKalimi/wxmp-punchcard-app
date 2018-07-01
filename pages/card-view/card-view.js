@@ -3,8 +3,6 @@ const TinyDB = require('../../lib/tinyDB.js');
 const SQR = require('../../lib/scanQR.js');
 const app = getApp(); 
 const user = app.globalData.appUser;
-const loadPunchCardData = TinyDB.getPunchcardByID(4);
-
 
 Page({
 
@@ -12,7 +10,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    punchCardData: loadPunchCardData,
+    punchCardData: {},
     isComplete: false
   },
 
@@ -29,10 +27,11 @@ Page({
       confirmText: "confirm",
       cancelText: "cancle",
       success: function (res) {
+        debugger
         TinyDB.resetPunchCard(4);
         console.log(res)
-        wx.reLaunch({
-          url: '/pages/card-view/card-view',
+        wx.navigateTo({
+          url: '/pages/card-view/card-view?resetPunchCardID=4',
         })
       }
     })
@@ -59,14 +58,25 @@ Page({
    */
 
 
-  onLoad: function (options) {  
+  onLoad: function (options) { 
+    debugger 
+
+    if (options.resetPunchCardID) {
+      let pcId = options.resetPunchCardID;
+      var reloadPunchCard = TinyDB.getPunchcardByID(parseInt(pcId));
+      this.setData({ punchCardData: reloadPunchCard })
+    }
+
     // If clickthrough from another page, load that id
     if (options.punchCardID){
       let pcId = options.punchCardID;
+      if (TinyDB.getPunchcardByID(parseInt(pcId)).currentPunches ===
+        TinyDB.getPunchcardByID(parseInt(pcId)).maxPunches) {      
+          this.setData({ isComplete: true });
+        }
       var reloadPunchCard = TinyDB.getPunchcardByID(parseInt(pcId));
-      this.setData({ punchCardData: reloadPunchCard }) 
-     }
-
+      this.setData({ punchCardData: reloadPunchCard })         
+      }
 
     // If QR code scanned, logic
     if(options.id) { 
@@ -91,16 +101,10 @@ Page({
         this.setData({punchCardData: newPunchCard});
       } 
       else { // if has punchcard, increment
-        TinyDB.incrementPunchCard(results.id); 
-
-        if (TinyDB.getPunchcardByID(results.id).currentPunches ===
-          TinyDB.getPunchcardByID(results.id).maxPunches) {
-            this.setData({ punchCardData: TinyDB.getPunchcardByID(results.id) })
-            this.setData({isComplete: true});
-          }
+        TinyDB.incrementPunchCard(results.id);
+        this.setData({ punchCardData: TinyDB.getPunchcardByID(results.id) })
       }
     }
-
   },
   //add card to wallet
   add_card: function () {

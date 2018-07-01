@@ -6,7 +6,7 @@
 
     <!--THIS IS THE ADD TO WALLET BUTTON-->
     <view class="add-btn">
-      <image src="../../assets/add-btn.svg" />
+      <image src="../../assets/add-btn.svg" bindtap='add_card'/>
     </view>
 
     <!--Punch Card-->

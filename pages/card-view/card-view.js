@@ -5,6 +5,7 @@ const app = getApp();
 const user = app.globalData.appUser;
 const loadPunchCardData = TinyDB.getPunchcardByID(4);
 
+
 Page({
 
   /**
@@ -21,6 +22,23 @@ Page({
   view_reward: function(e){
     wx.navigateTo({
       url: '/pages/reward/reward',
+    })
+  },
+  
+  // use reward
+  use_reward: function (e) {
+
+    wx.showModal({
+      // title: 'Please Confirm',
+      content: 'Do you wanna use your reward now?',
+      confirmText: "confirm",
+      cancelText: "cancle",
+      success: function (res) {
+        TinyDB.resetPunchCard(4);
+        wx.navigateTo({
+          url: '/pages/card-view/card-view',
+        })
+      }
     })
   },
 
@@ -46,7 +64,6 @@ Page({
 
 
   onLoad: function (options) {  
-    debugger
     // If clickthrough from another page, load that id
     if (options.punchCardID){
       let pcId = options.punchCardID;
@@ -57,7 +74,6 @@ Page({
 
     // If QR code scanned, logic
     if(options.id) { 
-      debugger
       var scannedMerchantID = options.id;
       var userID = app.globalData.appUser.id
       var results = TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID)

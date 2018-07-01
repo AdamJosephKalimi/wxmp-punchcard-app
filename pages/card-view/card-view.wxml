@@ -21,10 +21,16 @@
 
     <!--reward-->
     <view class="reward-text navy-font">Reward</view>
-    <view class="reward-icon-container">    
+    <!-- <view class="reward-icon-container">    
       <image class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
     </view>
-    <view wx:if="{{isComplete}}" bindtap='view_reward' class="redeem navy-font">Tap to redeem</view>
+    <view wx:if="{{isComplete}}" bindtap='view_reward' class="redeem navy-font">Tap to redeem</view> -->
+
+    <view class="reward-icon-container" >    
+      <image wx:if="{{isComplete === false}}" class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
+     <view wx:if="{{isComplete}}" > <image class="reward-icon" src="../../assets/reward-icon.svg" /></view>
+      <view wx:if="{{isComplete}}" bindtap='use_reward' class="redeem navy-font">Tap to redeem</view>
+    </view>
 
     <!--locations-->
     <view class="locations">

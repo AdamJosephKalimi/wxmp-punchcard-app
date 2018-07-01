@@ -1,7 +1,5 @@
 {
   "pages": [
-    "pages/index/index",
-    "pages/logs/logs",
     "pages/wallet/wallet",
     "pages/card-view/card-view",
     "pages/card-list/card-list",

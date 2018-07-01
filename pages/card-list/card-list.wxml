@@ -31,12 +31,12 @@
     </view>
 
     <view class="list-cards">
-      <view wx:for="{{punchCardsArray}}" bindtap="onClick" class="list-card" data-prop="{{item.id}}">
+      <view wx:for="{{punchCardsArray}}" bindtap="onClick" class="list-card" data-prop="{{item.id}}" style="background-image: url('{{item.listViewCard}}')">
         <view data-prop="{{item.id}}" class="list-logo" style="background-image: url('{{item.logo}}')">
         </view>
         <view data-prop="{{item.id}}" class="list-title navy-font">{{item.name}}</view>
         
-        <view class="list-x navy-font">x/8</view>
+        <view data-prop="{item.currentPunches}" class="list-x navy-font">{{item.currentPunches}}/8</view>
       </view>
     </view>
 

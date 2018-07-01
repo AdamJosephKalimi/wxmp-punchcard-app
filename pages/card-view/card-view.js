@@ -19,11 +19,6 @@ Page({
   // Scan QR
   scan_qr: SQR,
   
-  view_reward: function(e){
-    wx.navigateTo({
-      url: '/pages/reward/reward',
-    })
-  },
   
   // use reward
   use_reward: function (e) {
@@ -36,7 +31,7 @@ Page({
       success: function (res) {
         TinyDB.resetPunchCard(4);
         console.log(res)
-        wx.navigateTo({
+        wx.reLaunch({
           url: '/pages/card-view/card-view',
         })
       }
@@ -105,6 +100,11 @@ Page({
           }
       }
     }
+
+  },
+  //add card to wallet
+  add_card: function () {
+    console.log("hi, add a card")
 
   },
 

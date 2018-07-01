@@ -35,6 +35,7 @@ Page({
       cancelText: "cancle",
       success: function (res) {
         TinyDB.resetPunchCard(4);
+        console.log(res)
         wx.navigateTo({
           url: '/pages/card-view/card-view',
         })
@@ -45,12 +46,12 @@ Page({
   //* Navabar Function*//
 
   goWallet: function (e) {
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/wallet/wallet'
     })
   },
   goList: function (e) {
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/card-list/card-list'
     })
   },

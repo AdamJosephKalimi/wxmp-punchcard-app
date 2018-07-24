@@ -5,7 +5,8 @@
     "pages/card-list/card-list",
     "pages/testDB/testDB",
     "pages/scan-test/scan-test",
-    "pages/reward/reward"
+    "pages/reward/reward",
+    "pages/index/index"
 
   ],
   "window": {

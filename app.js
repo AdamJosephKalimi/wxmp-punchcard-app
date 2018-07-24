@@ -1,6 +1,12 @@
 //app.js
+const AV = require('./utils/av-weapp-min.js');
+// Initialization of the app
+AV.init({
+  appId: 'p0lIstfciy3YjDYnufG4SG43-gzGzoHsz',
+  appKey: 'NRAACHi51hmffOPnwxd8kDCG',
+});
+
 const TinyDB = require('./lib/tinyDB.js');
-const user = {};
 TinyDB.init();
 
 App({
@@ -10,12 +16,13 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
-    // 登录
-    wx.login({
-      success: res => {
-        // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      }
-    })
+    // // 登录
+    // wx.login({
+    //   success: res => {
+    //     console.log(res);
+    //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
+    //   }
+    // })
     // 获取用户信息
     wx.getSetting({
       success: res => {
@@ -24,6 +31,7 @@ App({
           wx.getUserInfo({
             success: res => {
               // 可以将 res 发送给后台解码出 unionId
+              console.log(res)
               this.globalData.userInfo = res.userInfo
 
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回

@@ -29,7 +29,7 @@
     <view class="reward-icon-container" >    
       <image wx:if="{{isComplete === false}}" class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
       <view wx:if="{{isComplete}}" bindtap='use_reward'> <image class="reward-icon" src="../../assets/reward-icon.svg" /></view>
-      <view wx:if="{{isComplete}}" bindtap='use_reward' class="redeem navy-font">点触抵用大奖！</view>
+      <view wx:if="{{isComplete}}" bindtap='use_reward' class="redeem navy-font">点触领取大奖！</view>
       <view wx:if="{{isComplete}}" bindtap='use_reward' class="redeem navy-font">Tap to use reward now!</view>
     </view>
 

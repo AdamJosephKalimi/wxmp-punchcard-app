@@ -1,41 +1,23 @@
 // pages/wallet/wallet.js
+const TinyDB = require('../../lib/tinyDB.js');
+const SQR = require('../../lib/scanQR.js');
+const app = getApp();
+const user = app.globalData.appUser;
+const loadPunchcards = TinyDB.getPunchcardsForUser(user.id);
+
 
 Page({
 
-  /**
-   * 页面的初始数据
-   */
+   // 页面的初始数据
   data: {
-    
+    id: user.id,
+    name: user.name,
+    punchCards: loadPunchcards
   },
 
-  scan_qr: function () {
-    var that = this;
-    var merchant_id;
-    wx.scanCode({
-      success: (res) => {
-        console.log(res)
-        this.merchant_id = res.result.split("=")[1];
-        that.setData({
-          merchant_id: this.merchant_id
-        })
-        console.log("merchant_id", that.data.merchant_id)
-        wx.showToast({
-          title: 'success',
-          icon: 'success',
-          duration: 2000
-        })
-        wx.navigateTo({
-          url: `/pages/card-view/card-view?id=${that.data.merchant_id}`,
-        })
-      },
-      complete: (res) => {
-      }
-    })
-  },
+  scan_qr: SQR,
 
-  //* Navabar Function*//
-
+  // Navabar Function
   goWallet: function (e) {
     wx.reLaunch({
       url: '/pages/wallet/wallet'
@@ -47,16 +29,21 @@ Page({
     })
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  // 生命周期函数--监听页面加载
   onLoad: function (options) {
-  
+    const reLoadPunchcards = TinyDB.getPunchcardsForUser(user.id);
+    this.setData({ punchCards: reLoadPunchcards})
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
+  // Navigate to card detail page 
+  onClickCard: function (tap) {
+    var targetPunchCardID = tap.target.dataset.prop
+    wx.navigateTo({
+      url: '/pages/card-view/card-view?punchCardID=' + targetPunchCardID
+    })
+  },
+
+  // 生命周期函数--监听页面初次渲染完成
   onReady: function () {
   
   },

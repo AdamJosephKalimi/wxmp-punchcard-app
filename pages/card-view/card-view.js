@@ -1,60 +1,51 @@
-const TinyDB = require('../../lib/tinyDB.js');
-const pageData = TinyDB.getPunchcardByID(4);
-
-let log = console.log
-
 // pages/card-view/card-view.js
-var app = getApp(); 
+const TinyDB = require('../../lib/tinyDB.js');
+const SQR = require('../../lib/scanQR.js');
+const app = getApp(); 
+const user = app.globalData.appUser;
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    fakeData: pageData,
+    punchCardData: {},
     isComplete: false
   },
 
-  scan_qr: function () {
-    var that = this;
-    var merchant_id;
-    wx.scanCode({
-      success: (res) => {
-        console.log(res)
-        this.merchant_id = res.result.split("=")[1];
-        that.setData({
-          merchant_id: this.merchant_id
-        })
-        console.log("merchant_id", that.data.merchant_id)
-        wx.showToast({
-          title: 'success',
-          icon: 'success',
-          duration: 2000
-        })
-        wx.navigateTo({
-          url: `/pages/card-view/card-view?id=${that.data.merchant_id}`,
-        })
-      },
-      complete: (res) => {
-      }
-    })
-  },
+  // Scan QR
+  scan_qr: SQR,
   
-  view_reward: function(e){
-    wx.navigateTo({
-      url: '/pages/reward/reward',
+  
+  // use reward
+  use_reward: function (e) {
+
+    wx.showModal({
+      // title: 'Please Confirm',
+      content: 'Do you wanna use your reward now?',
+      confirmText: "confirm",
+      cancelText: "cancle",
+      success: function (res) {
+        debugger
+        TinyDB.resetPunchCard(4);
+        console.log(res)
+        wx.navigateTo({
+          url: '/pages/card-view/card-view?resetPunchCardID=4',
+        })
+      }
     })
   },
 
   //* Navabar Function*//
 
   goWallet: function (e) {
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/wallet/wallet'
     })
   },
   goList: function (e) {
-    wx.reLaunch({
+    wx.navigateTo({
       url: '/pages/card-list/card-list'
     })
   },
@@ -68,6 +59,7 @@ Page({
 
 
   onLoad: function (options) { 
+    debugger 
 
     if (options.resetPunchCardID) {
       let pcId = options.resetPunchCardID;
@@ -91,31 +83,19 @@ Page({
       var scannedMerchantID = options.id;
       var userID = app.globalData.appUser.id
       var results = TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID)
-      if(results == undefined) { //  if no punchard, creat one
-        var newPunchCard = TinyDB.makeNewPunchCard(
-          {
-            "id": 6,
-            "merchant": 1,
-            "user": 1,
-            "logo": "http://www.farmhousejuice.cn/wp-content/uploads/2015/10/pumpkin-corner-314x600.jpg",
-            "name": "buyonegetonefree",
-            "expirationDate": "2018-06-12",
-            "reward": "one free coffee",
-            "maxPunches": 8,
-            "currentPunches": 4,
-            "finePrint": "only valid if you know the password"
-          }          
-        )
-        this.setData({fakeData: newPunchCard})
-      } else { // if has punchard, increment
-        TinyDB.incrementPunchCard(results.id); 
-        this.setData({ fakeData: TinyDB.getPunchcardByID(results.id) })
-        if (TinyDB.getPunchcardByID(results.id).currentPunches ===
-          TinyDB.getPunchcardByID(results.id).maxPunches) {
-            this.setData({isComplete: true});
-          }
+      if(results == undefined) { //  if no punchcard, create one
+        var newPunchCard = TinyDB.makeNewPunchCard()
+        this.setData({punchCardData: newPunchCard});
+      } 
+      else { // if has punchcard, increment
+        TinyDB.incrementPunchCard(results.id);
+        this.setData({ punchCardData: TinyDB.getPunchcardByID(results.id) })
       }
     }
+  },
+  //add card to wallet
+  add_card: function () {
+    console.log("hi, add a card")
 
   },
 

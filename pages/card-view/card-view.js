@@ -1,5 +1,6 @@
 // pages/card-view/card-view.js
 const TinyDB = require('../../lib/tinyDB.js');
+let Markers = require('../../utils/markers');
 const SQR = require('../../lib/scanQR.js');
 const app = getApp(); 
 const user = app.globalData.appUser;
@@ -11,7 +12,21 @@ Page({
    */
   data: {
     punchCardData: {},
-    isComplete: false
+    isComplete: false,
+    markers: Markers,
+    latitude: wx.getStorageSync('latitude'),
+    longitude: wx.getStorageSync('longitude'),
+    controls: [{
+      id: 4,
+      iconPath: 'map.png',
+      position: {
+        left: 10,
+        top: 500 - 50,
+        width: 30,
+        height: 2000
+      },
+      clickable: true
+    }]
   },
 
   // Scan QR
@@ -27,7 +42,7 @@ Page({
       confirmText: "confirm",
       cancelText: "cancle",
       success: function (res) {
-        debugger
+        // debugger
         TinyDB.resetPunchCard(4);
         console.log(res)
         wx.navigateTo({
@@ -59,7 +74,10 @@ Page({
 
 
   onLoad: function (options) { 
-    debugger 
+    // debugger 
+    wx.showLoading({
+      title: 'Loading',
+    })
 
     if (options.resetPunchCardID) {
       let pcId = options.resetPunchCardID;
@@ -92,6 +110,55 @@ Page({
         this.setData({ punchCardData: TinyDB.getPunchcardByID(results.id) })
       }
     }
+
+    // Code for map
+    console.log("latitude", this.data.markers[0].latitude)
+    // console.log("longitude", this.data.markers[0].longitude)
+    console.log("Markers", this.data.markers)
+
+    let that = this;
+    wx.getStorage({
+      key: 'latitude',
+      success: function (res) {
+        that.setData({
+          latitude: res.data,
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'longitude',
+      success: function (res) {
+        that.setData({
+          latitude: res.data,
+        })
+      }
+    })
+    wx.showLoading({
+      title: 'Loading',
+    })
+
+    // console.log("latitude", this.data.markers[0].latitude)
+    // console.log("longitude", this.data.markers[0].longitude)
+    console.log("Markers", this.data.markers)
+
+    // let that = this;
+    wx.getStorage({
+      key: 'latitude',
+      success: function (res) {
+        that.setData({
+          latitude: res.data,
+        })
+      }
+    })
+    wx.getStorage({
+      key: 'longitude',
+      success: function (res) {
+        that.setData({
+          latitude: res.data,
+        })
+      }
+    })
+    wx.hideLoading()
   },
   //add card to wallet
   add_card: function () {
@@ -103,7 +170,27 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+    this.mapCtx = wx.createMapContext('map');
+    wx.getLocation();
+    this.mapCtx.moveToLocation({
+    });
+  },
+
+  moveToLocation: function () {
+    this.mapCtx.moveToLocation()
+  },
+
+  regionchange(e) {
+    
+  },
+
+  markertap(e) {
+    console.log(e.markerId)
+
+  },
+
+  controltap(e) {
+   
   },
 
   /**

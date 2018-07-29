@@ -1,4 +1,5 @@
 <!--pages/card-view/card-view.wxml-->
+<import src="../map/map.wxml" />
 <import src="/shared/navbar.wxml" />
 
 <view class="container">
@@ -39,6 +40,14 @@
         <view class="location-address navy-font">303 Nanjing Rd, Jing An, Shanghai</view>
       </view>  
     </view>
+
+    <!--map-->
+    <map 
+      id="map" scale="15" controls="{{controls}}" 
+      latitude="31.22352" longitude="121.45591" 
+      bindcontroltap="moveToLocation" markers="{{markers}}" 
+      bindmarkertap="markertap" polyline="{{polyline}}" show-location>
+    </map>
 
 <!--
     <view>

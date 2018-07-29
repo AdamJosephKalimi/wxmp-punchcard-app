@@ -31,7 +31,80 @@
     <view class="reward-icon-container">    
       <image class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
     </view>
-    <view class="redeem navy-font">Tap to redeem</view>
+    <view wx:if="{{isComplete}}" bindtap='view_reward' class="redeem navy-font">Tap to redeem</view> -->
+
+    <view class="reward-icon-container" >    
+      <image wx:if="{{isComplete === false}}" class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
+      <view wx:if="{{isComplete}}" bindtap='use_reward'> 
+      <!--
+        <image class="reward-icon" src="../../assets/reward-icon.svg" />
+      -->  
+        <view class="container">
+          <view class="cup">
+            <view class="handle">
+              <view class="inner"></view>
+            </view>
+            <view class="body">
+              <view class="alpha"></view>
+              <view class="TPart">
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="coffee">
+                  <view class="drops">
+                    <view class="glare"></view>
+                  </view>
+                  <view class="drops">
+                    <view class="glare"></view>
+                  </view>
+                </view>
+              </view>
+              <view class="smileContainer">
+                <view class="eyes">
+                  <view class="eyeBall"></view>
+                </view>
+                <view class="eyes">
+                  <view class="eyeBall"></view>
+                </view>
+                <view class="smile"></view>
+              </view>
+              <view class="BPart"></view>
+            </view>
+            <view class="bottom"></view>
+          </view>
+          <view class="ground">
+            <view class="rock"></view>
+          </view>
+        </view>
+      </view>
+      
+      <view wx:if="{{isComplete}}" bindtap='use_reward' class="redeem navy-font">点触领取大奖！</view>
+      <view wx:if="{{isComplete}}" bindtap='use_reward' class="redeem navy-font">Tap to use reward now!</view>
+    </view>
 
     <!--locations-->
     <view class="locations">

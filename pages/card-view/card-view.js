@@ -25,7 +25,7 @@ Page({
       // title: 'Please Confirm',
       content: 'Do you wanna use your reward now?',
       confirmText: "confirm",
-      cancelText: "cancle",
+      cancelText: "cancel",
       success: function (res) {
         debugger
         TinyDB.resetPunchCard(4);
@@ -59,7 +59,7 @@ Page({
 
 
   onLoad: function (options) { 
-    debugger 
+    // debugger 
 
     if (options.resetPunchCardID) {
       let pcId = options.resetPunchCardID;

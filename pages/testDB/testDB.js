@@ -1,4 +1,7 @@
 const TinyDB = require('../../lib/tinyDB.js');
+const AV = require('../../utils/av-weapp-min.js');
+const Form = require('../../models/form.js');
+
 
 const log = console.log
 
@@ -9,7 +12,14 @@ Page({
    * 页面的初始数据
    */
   data: {
-  
+    forms: {}
+  },
+  onReady: function () {
+    new AV.Query('Form')
+      .descending('createdAt')
+      .find()
+      .then(forms => this.setData({ forms }))
+      .catch(console.error);
   },
 
   /**
@@ -17,6 +27,41 @@ Page({
    */
   onLoad: function (options) {
     
+  },
+
+  bindFormSubmit: function (e) {
+    // Local storage
+    console.log(e)
+    console.error("sup dawg")
+    var review = e.detail.value.review
+    // ...
+
+    // Leancloud permissions
+    var acl = new AV.ACL();
+    acl.setPublicReadAccess(true);
+    acl.setPublicWriteAccess(true);
+
+    // Leancloud storage
+    setTimeout(function () {
+      new Form({
+        review: review
+        // ...
+      }).setACL(acl)
+      .save()
+      .then(console.log("callback from form save - only saved after data saved"))
+      .catch(console.error);
+
+      // new AV.Query('Form')
+      //   .descending('createdAt')
+      //   .find()
+      //   .then(forms => this.setData({ forms }))
+      //   .catch(console.error);
+
+      // Redirect user
+      // wx.reLaunch({
+      //   url: '../../pages/card-view/card-view'
+      // });
+    }, 2000);
   },
 
   testRead() {
@@ -28,13 +73,6 @@ Page({
   testIncrement() {
     let data = TinyDB.incrementPunchCard(1)
     console.log(data)
-  },
-
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-  
   },
 
   /**

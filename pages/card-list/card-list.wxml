@@ -31,10 +31,12 @@
     </view>
 
     <view class="list-cards">
-      <view class="list-card" style="background-image: url('https://user-images.githubusercontent.com/32171360/42127006-e5762c5c-7cc3-11e8-89bc-5c6d31802df4.png')">
-        <view class="list-logo" style="background-image: url('https://v2assets.zopim.io/4YYfzh6b7WjTBg4UkHc8J7XKmos7gNV8-banner?1486175605983')"></view>
-        <view class="list-title navy-font">Farmhouse Juice</view>
-        <view class="list-x navy-font">x/8</view>
+      <view wx:for="{{punchCardsArray}}" bindtap="onClick" class="list-card" data-prop="{{item.id}}" style="background-image: url('{{item.listViewCard}}')">
+        <view data-prop="{{item.id}}" class="list-logo" style="background-image: url('{{item.logo}}')">
+        </view>
+        <view data-prop="{{item.id}}" class="list-title navy-font">{{item.name}}</view>
+        
+        <view data-prop="{item.currentPunches}" class="list-x navy-font">0/8</view>
       </view>
     </view>
 

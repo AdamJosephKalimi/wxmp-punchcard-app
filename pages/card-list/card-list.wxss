@@ -72,8 +72,9 @@
 .list-cards {
   padding: 0 20rpx;
   display: flex;
-  justify-content: left;
+  justify-content: space-between;
   align-items: flex-start;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 
@@ -86,6 +87,7 @@
   position: relative;
   box-shadow: 0px 0 4px 1px #F0F0F7;
   border-radius: 6rpx;
+  /* background-image: url('https://user-images.githubusercontent.com/32171360/42127006-e5762c5c-7cc3-11e8-89bc-5c6d31802df4.png') */
 }
 
 .list-logo {

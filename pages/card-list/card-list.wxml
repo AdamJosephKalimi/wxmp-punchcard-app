@@ -11,9 +11,12 @@
         <view class="map">   
           <image src="../../assets/map-icon.svg" />
         </view>
-        -->
+
         <view class="search"><text class="navy-font">Search</text></view>
+        -->        
+        <input class="search-input" placeholder-class="phcolor" placeholder="搜索 Search"/>
       </view>
+      <!--
       <view class="filters">
         <view class="filter filter-active">
           <text class="navy-font">All</text>
@@ -28,6 +31,7 @@
           <text class="navy-font">Food</text>
         </view>                        
       </view>
+      -->
     </view>
 
     <view class="list-cards">

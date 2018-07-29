@@ -65,8 +65,29 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
-    if(options.id) { // QR code scanned
+
+
+  onLoad: function (options) { 
+
+    if (options.resetPunchCardID) {
+      let pcId = options.resetPunchCardID;
+      var reloadPunchCard = TinyDB.getPunchcardByID(parseInt(pcId));
+      this.setData({ punchCardData: reloadPunchCard })
+    }
+
+    // If clickthrough from another page, load that id
+    if (options.punchCardID){
+      let pcId = options.punchCardID;
+      if (TinyDB.getPunchcardByID(parseInt(pcId)).currentPunches ===
+        TinyDB.getPunchcardByID(parseInt(pcId)).maxPunches) {      
+          this.setData({ isComplete: true });
+        }
+      var reloadPunchCard = TinyDB.getPunchcardByID(parseInt(pcId));
+      this.setData({ punchCardData: reloadPunchCard })         
+      }
+
+    // If QR code scanned, logic
+    if(options.id) { 
       var scannedMerchantID = options.id;
       var userID = app.globalData.appUser.id
       var results = TinyDB.getPunchCardsForUserAndMerchant(userID, scannedMerchantID)

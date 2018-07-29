@@ -27,7 +27,7 @@ Page({
       confirmText: "confirm",
       cancelText: "cancle",
       success: function (res) {
-        debugger
+        // debugger
         TinyDB.resetPunchCard(4);
         console.log(res)
         wx.navigateTo({
@@ -59,7 +59,7 @@ Page({
 
 
   onLoad: function (options) { 
-    debugger 
+    // debugger 
 
     if (options.resetPunchCardID) {
       let pcId = options.resetPunchCardID;

@@ -39,7 +39,7 @@
       <!--
         <image class="reward-icon" src="../../assets/reward-icon.svg" />
       -->  
-        <view class="container">
+        <view class="animation-container">
           <view class="cup">
             <view class="handle">
               <view class="inner"></view>

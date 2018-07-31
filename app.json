@@ -6,7 +6,8 @@
     "pages/testDB/testDB",
     "pages/scan-test/scan-test",
     "pages/reward/reward",
-    "pages/index/index"
+    "pages/index/index",
+    "pages/map/map"
 
   ],
   "window": {

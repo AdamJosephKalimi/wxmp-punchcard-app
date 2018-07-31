@@ -103,6 +103,84 @@
 }
 
 
+/* Map styling */
+#map {
+  width: 100%; 
+  height: 85vh;
+}
+
+.black-button{
+ background-color: red !important;
+ width: 100%;
+ font-size: 1rem;
+ text-align: center;
+ position: fixed;
+ bottom: 0;
+ margin: 0;
+}
+
+.resultsWrapper{
+ width: 100%;
+ height: 15vh;
+ color: white;
+ background-color: rgba(37,37,37, 0.95);
+ position: fixed;
+ bottom: 0;
+ margin: 0;
+ padding: 10rpx;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+}
+
+.resultName{
+ width: 40%;
+ display: flex;
+ justify-content: flex-start;
+ font-size: .8rem;
+}
+.resultTitle{
+font-size: .8rem;
+}
+.resultBox{
+ width: 100%;
+ border-radius: 5px;
+ min-height: 50rpx;
+ display: inline-flex;
+ align-items: center;
+ justify-content: space-between;
+}
+.resultLogo{
+ 
+ display: flex;
+ flex-direction: column;
+ align-items: flex-start;
+ justify-content: center;
+ margin: 15rpx 0;
+ margin-left: 15rpx;
+ width: 40%;
+ font-size: .75rem;
+}
+
+.resultLoc{
+ width: 20%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ margin-right: 15rpx;
+}
+.distance{
+ 
+ color: green;
+ font-size: .75rem;
+ margin-right: 15rpx;
+}
+.address{
+ font-size: .5rem;
+=======
+
 /* ANIMATION */
 /* 
 * {

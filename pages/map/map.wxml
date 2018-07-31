@@ -1,0 +1,6 @@
+<template name="mapComponent">
+    <map id="map" scale="15" controls="{{controls}}" 
+latitude="31.22352" longitude="121.45591" 
+bindcontroltap="moveToLocation" markers="{{markers}}" 
+    bindmarkertap="markertap" polyline="{{polyline}}" show-location></map>
+</template>

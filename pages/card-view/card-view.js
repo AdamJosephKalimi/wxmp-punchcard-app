@@ -75,9 +75,11 @@ Page({
 
   onLoad: function (options) { 
     // debugger 
+
     wx.showLoading({
       title: 'Loading',
     })
+
 
     if (options.resetPunchCardID) {
       let pcId = options.resetPunchCardID;

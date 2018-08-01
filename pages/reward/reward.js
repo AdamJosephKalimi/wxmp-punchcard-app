@@ -18,7 +18,7 @@ Page({
       title: 'Please Confirm',
       content: 'Do you wanna use your reward now?',
       confirmText: "confirm",
-      cancelText: "cancle",
+      cancelText: "cancel",
       success: function (res) {
         TinyDB.resetPunchCard(4);
         wx.navigateTo({

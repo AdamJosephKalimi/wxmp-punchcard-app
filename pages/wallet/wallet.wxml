@@ -4,8 +4,8 @@
 <view class="container">
   <scroll-view class="scroll-height" scroll-y="true">	 
     
-    <view class="card-counter">{{punchCards.length}} cards</view>
-
+    <view wx:if="{{punchCards.length === 1}}" class="card-counter">{{punchCards.length}} 卡 - {{punchCards.length}} card</view>
+    <view wx:else class="card-counter">{{punchCards.length}} 卡 - {{punchCards.length}} cards</view>
 
     <view wx:for="{{punchCards}}" class="wallet-cards" bindtap="onClickCard">
       <view class="wallet-card" data-prop="{{item.id}}" style="background-image: url('{{item.walletViewCard}}')">

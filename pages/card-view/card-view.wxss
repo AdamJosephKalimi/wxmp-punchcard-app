@@ -57,6 +57,7 @@
 .reward-text {
   text-align: center;
   margin: 40rpx 0;
+  font-weight: 600;
 }
 
 .reward-icon {

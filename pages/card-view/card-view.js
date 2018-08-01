@@ -40,7 +40,7 @@ Page({
       // title: 'Please Confirm',
       content: 'Do you wanna use your reward now?',
       confirmText: "confirm",
-      cancelText: "cancle",
+      cancelText: "cancel",
       success: function (res) {
         // debugger
         TinyDB.resetPunchCard(4);
@@ -79,7 +79,6 @@ Page({
     wx.showLoading({
       title: 'Loading',
     })
-
 
     if (options.resetPunchCardID) {
       let pcId = options.resetPunchCardID;

@@ -21,7 +21,7 @@
     </view>
 
     <!--reward-->
-    <view class="reward-text navy-font">Reward</view>
+    <view class="reward-text navy-font">大奖 Reward</view>
     <!-- <view class="reward-icon-container">    
       <image class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
     </view>
@@ -29,6 +29,9 @@
 
     <view class="reward-icon-container" >    
       <image wx:if="{{isComplete === false}}" class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
+
+      <view wx:if="{{isComplete}}" bindtap='use_reward'> <image class="reward-icon" src="../../assets/reward-icon.svg" /></view>
+
       <view class="animation" wx:if="{{isComplete}}" bindtap='use_reward'> 
       
         <image class="reward-icon" src="../../assets/reward-icon.svg" />
@@ -102,8 +105,10 @@
 
     <!--locations-->
     <view class="locations">
-      <view class="location-header navy-font">Locations</view>
+      <view class="location-header navy-font">地点 Locations</view>
+      <!-- the view with class="location" will hold the location data loop -->
       <view class="location">
+        <view class="location-address navy-font">上海市静安区南京路303号</view>
         <view class="location-address navy-font">303 Nanjing Rd, Jing An, Shanghai</view>
       </view>  
     </view>

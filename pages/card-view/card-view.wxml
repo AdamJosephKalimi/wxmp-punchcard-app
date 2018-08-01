@@ -1,4 +1,5 @@
 <!--pages/card-view/card-view.wxml-->
+<import src="../map/map.wxml" />
 <import src="/shared/navbar.wxml" />
 
 <view class="container">
@@ -28,7 +29,76 @@
 
     <view class="reward-icon-container" >    
       <image wx:if="{{isComplete === false}}" class="reward-icon greyscale" src="../../assets/reward-icon.svg" />
+
       <view wx:if="{{isComplete}}" bindtap='use_reward'> <image class="reward-icon" src="../../assets/reward-icon.svg" /></view>
+
+      <view class="animation" wx:if="{{isComplete}}" bindtap='use_reward'> 
+      
+        <image class="reward-icon" src="../../assets/reward-icon.svg" />
+      <!-- 
+        <view class="animation-container">
+          <view class="cup">
+            <view class="handle">
+              <view class="inner"></view>
+            </view>
+            <view class="body">
+              <view class="alpha"></view>
+              <view class="TPart">
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="vapour">
+                  <view>❤</view>
+                </view>
+                <view class="coffee">
+                  <view class="drops">
+                    <view class="glare"></view>
+                  </view>
+                  <view class="drops">
+                    <view class="glare"></view>
+                  </view>
+                </view>
+              </view>
+              <view class="smileContainer">
+                <view class="eyes">
+                  <view class="eyeBall"></view>
+                </view>
+                <view class="eyes">
+                  <view class="eyeBall"></view>
+                </view>
+                <view class="smile"></view>
+              </view>
+              <view class="BPart"></view>
+            </view>
+            <view class="bottom"></view>
+          </view>
+          <view class="ground">
+            <view class="rock"></view>
+          </view>
+        </view>
+        -->
+      </view>
       <view wx:if="{{isComplete}}" bindtap='use_reward' class="redeem navy-font">点触领取大奖！</view>
       <view wx:if="{{isComplete}}" bindtap='use_reward' class="redeem navy-font">Tap to use reward now!</view>
     </view>
@@ -42,6 +112,14 @@
         <view class="location-address navy-font">303 Nanjing Rd, Jing An, Shanghai</view>
       </view>  
     </view>
+
+    <!--map-->
+    <map 
+      id="map" scale="15" controls="{{controls}}" 
+      latitude="31.22352" longitude="121.45591" 
+      bindcontroltap="moveToLocation" markers="{{markers}}" 
+      bindmarkertap="markertap" polyline="{{polyline}}" show-location>
+    </map>
 
 <!--
     <view>

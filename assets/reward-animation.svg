@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="311px" height="303px" viewBox="0 0 311 303" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.2 (57519) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <circle id="bg-oval" fill="#FDDEDC" fill-rule="nonzero" cx="150" cy="150" r="150"></circle>
+        <g id="cup" transform="translate(0.000000, 63.000000)" fill-rule="nonzero">
+            <path d="M30,238.476562 C35.5228475,238.476562 40,237.522847 40,232 C40,226.477153 35.5228475,222 30,222 C24.4771525,222 20,226.477153 20,232 C20,237.522847 24.4771525,238.476562 30,238.476562 Z" id="Oval-9" fill="#514F60"></path>
+            <circle id="Oval-10" fill="#F1DFD9" cx="30" cy="232" r="5"></circle>
+            <rect id="Rectangle-5" fill="#514F60" x="0" y="234" width="300" height="6" rx="3"></rect>
+            <g id="base" transform="translate(85.000000, 207.000000)">
+                <rect id="Rectangle-3" fill="#514F60" x="0" y="0" width="130" height="27"></rect>
+                <rect id="Rectangle-4" fill="#F1DFD9" x="4" y="2" width="122" height="20"></rect>
+            </g>
+            <g id="handle" transform="translate(201.000000, 32.000000)">
+                <circle id="Oval-8" fill="#514F60" cx="55" cy="55" r="55"></circle>
+                <circle id="Oval-7" fill="#CD5D57" cx="55" cy="55" r="50"></circle>
+                <circle id="Oval-6" fill="#514F60" cx="53.5" cy="54.5" r="30.5"></circle>
+                <circle id="Oval-5" fill="#FDDEDC" cx="54" cy="55" r="25"></circle>
+            </g>
+            <path d="M45,169 L255.000433,169 C253.984735,180.579579 249.259982,190.568372 240.826172,198.966377 C237.474609,202.303711 227.403301,207.172145 215.869141,208.449027 C194,210.870036 106.454338,210.870036 83.2148437,208.449027 C70.0957074,207.082322 65.2113582,202.24794 60.9121094,198.966377 C52.3587421,192.437698 47.0547056,182.448906 45,169 Z" id="Rectangle-2" fill="#514F60"></path>
+            <path d="M51,174.599609 L249.105469,174.599609 C246.272135,184.910807 241.01888,192.505859 233.345703,197.384766 C225.469727,203.026367 209.609375,205.557617 147.164062,205.557617 C84.71875,205.557617 79.2158203,205.557617 66.8847656,197.384766 C60.0917969,192.505859 54.796875,184.910807 51,174.599609 Z" id="Path-2" fill="#CD5D57"></path>
+            <g id="main" transform="translate(45.000000, 0.000000)">
+                <rect id="main-border" fill="#514F60" x="0" y="0" width="210" height="175" rx="8"></rect>
+                <rect fill="#FEEBE5" x="6" y="30" width="199" height="139"></rect>
+                <rect id="main-shadow" fill="#F1DFD9" x="6" y="30" width="100" height="139"></rect>
+            </g>
+            <path d="M52.9711914,5 L247.023438,5 C248.131607,5.16503294 248.863053,5.42968137 249.217773,5.79394531 C249.572494,6.15820925 249.833237,6.91244102 250,8.05664063 L250,25 L51,25 L51,7.06884766 C51.2050732,6.44987176 51.4176383,6.02490431 51.6376953,5.79394531 C51.8577523,5.56298631 52.302251,5.29833788 52.9711914,5 Z" id="Rectangle" fill="#CD5D57"></path>
+        </g>
+        <g id="eyes" transform="translate(105.000000, 133.000000)" fill-rule="nonzero">
+            <g id="left-eye">
+                <circle id="Oval-2" fill="#414141" cx="9.5" cy="9.5" r="9.5"></circle>
+                <circle id="Oval-3" fill="#FFFFFF" cx="9.5" cy="9.5" r="4.5"></circle>
+            </g>
+            <g id="right-eye" transform="translate(70.000000, 0.000000)">
+                <circle id="Oval-2" fill="#414141" cx="9.5" cy="9.5" r="9.5"></circle>
+                <circle id="Oval-3" fill="#FFFFFF" cx="9.5" cy="9.5" r="4.5"></circle>
+            </g>
+        </g>
+        <g id="mouth" transform="translate(120.000000, 174.000000)" fill-rule="nonzero">
+            <path d="M30.5,27 C47.3446849,27 61,13.75 61,0.5 L0,0.5 C0,13.75 13.6553151,27 30.5,27 Z" id="Oval" fill="#3F3F3F"></path>
+            <path d="M30.5,23.4765625 C44.5832611,23.4765625 55.5693359,13.5 57,4 L4,4 C5.45507812,13.5 16.4167389,23.4765625 30.5,23.4765625 Z" id="Oval-4" fill="#FFFFFF"></path>
+        </g>
+    </g>
+</svg>

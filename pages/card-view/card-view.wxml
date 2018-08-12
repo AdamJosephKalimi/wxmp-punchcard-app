@@ -34,7 +34,6 @@
 
       <view class="animation" wx:if="{{isComplete}}" bindtap='use_reward'> 
       
-        <image class="reward-icon" src="../../assets/reward-icon.svg" />
       <!-- 
         <view class="animation-container">
           <view class="cup">
